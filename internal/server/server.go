@@ -3,7 +3,7 @@ package server
 import (
 	"log"
 	"net/http"
-	"template/internal/server/routes"
+	"tasks-app-api/internal/server/routes"
 	"time"
 
 	"github.com/go-chi/chi"

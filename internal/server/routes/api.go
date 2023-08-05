@@ -2,8 +2,8 @@ package routes
 
 import (
 	"net/http"
-	templaterepository "template/internal/data/infrastructure/templateRepository"
-	templatehandler "template/pkg/useCases/Handlers/templateHandler"
+	"tasks-app-api/internal/data/infrastructure/taskRepository"
+	"tasks-app-api/pkg/useCases/Handlers/taskHandler"
 
 	"github.com/go-chi/chi"
 )
@@ -16,12 +16,12 @@ var (
 func New() http.Handler {
 	r := chi.NewRouter()
 
-	tr := TemplateRouter{
-		Handler: templatehandler.TemplateHandler{
-			Repository: templaterepository.TemplateRepository{},
+	tr := TaskRouter{
+		Handler: &taskHandler.TaskHandler{
+			Repository: taskRepository.TaskRepository{},
 		},
 	}
 
-	r.Mount("/template", tr.Routes())
+	r.Mount("/tasks", tr.Routes())
 	return r
 }

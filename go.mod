@@ -1,4 +1,4 @@
-module template
+module tasks-app-api
 
 go 1.19
 

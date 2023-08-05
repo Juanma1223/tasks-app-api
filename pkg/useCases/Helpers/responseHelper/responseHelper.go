@@ -3,7 +3,7 @@ package responseHelper
 import (
 	"encoding/json"
 	"net/http"
-	"template/pkg/domain/response"
+	"tasks-app-api/pkg/domain/response"
 )
 
 func ResponseBuilder(status int, message string, data interface{}) ([]byte, error) {

@@ -57,6 +57,9 @@ const (
 	//EncryptionExceptions
 	EncryptionError
 	DecryptionError
+
+	TaskFound
+	TaskNotFound
 )
 
 var (
@@ -100,6 +103,9 @@ var (
 
 		EncryptionError: {Index: 31, Name: "EncryptionError", Http: http.StatusInternalServerError},
 		DecryptionError: {Index: 32, Name: "DecryptionError", Http: http.StatusInternalServerError},
+
+		TaskFound:    {Index: 33, Name: "TaskFound", Http: http.StatusInternalServerError},
+		TaskNotFound: {Index: 34, Name: "TaskNotFound", Http: http.StatusInternalServerError},
 	}
 )
 
