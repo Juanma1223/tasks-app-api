@@ -1,0 +1,9 @@
+{
+    "LOCAL": {
+        "name": "LOCAL",
+        "database": "tasks_app",
+        "username": "root",
+        "host": "localhost",
+        "port": "3306"
+    }
+}

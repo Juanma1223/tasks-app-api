@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	"template/internal/server"
+	"tasks-app-api/internal/server"
 )
 
 // @title Template

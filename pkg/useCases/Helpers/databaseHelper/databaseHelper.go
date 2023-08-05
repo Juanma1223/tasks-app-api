@@ -1,6 +1,7 @@
 package databaseHelpers
 
 import (
+	"os"
 	"time"
 
 	"gorm.io/driver/mysql"
@@ -14,7 +15,7 @@ func GetDB() *gorm.DB {
 	var mysqlTimeFormat = "2006-01-02 15:04:05"
 	//fmt.Println("INIT CALL")
 	var err error
-	connectionUrl := "root:root@tcp(127.0.0.1:3306)/tasks-app"
+	connectionUrl := os.Getenv("DB")
 	// Parse local time
 	localTime := "2006-01-02 15:04:05"
 	var loc = time.FixedZone("", -3*60*60)

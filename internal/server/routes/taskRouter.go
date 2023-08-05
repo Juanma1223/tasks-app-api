@@ -73,7 +73,7 @@ func (tr *TaskRouter) CreateTask(w http.ResponseWriter, r *http.Request) {
 		responseHelper.ResponseStatusChecker(w, INTERNAL_SERVER_ERROR)
 		return
 	}
-	status := tr.Handler.CreateTask(task)
+	status := tr.Handler.CreateTask(&task)
 	resp, err := responseHelper.ResponseBuilder(status.Index(), status.String(), nil)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -100,7 +100,7 @@ func (tr *TaskRouter) Routes() http.Handler {
 		MaxAge:             300,
 	}))
 
-	r.Get("/{ taskId }", tr.GetTask)
+	r.Get("/{taskId}", tr.GetTask)
 	r.Get("/", tr.GetAllTask)
 
 	r.Post("/", tr.CreateTask)

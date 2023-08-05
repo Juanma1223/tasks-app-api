@@ -11,14 +11,14 @@ type TaskHandler struct {
 }
 
 type Handler interface {
-	CreateTask(task task.Task) response.Status
+	CreateTask(task *task.Task) response.Status
 	GetTask(taskId int) (interface{}, response.Status)
 	GetAllTask() (interface{}, response.Status)
 	UpdateTask(task task.Task) response.Status
 }
 
-func (th *TaskHandler) CreateTask(task task.Task) response.Status {
-	return th.Repository.CreateTask(&task)
+func (th *TaskHandler) CreateTask(task *task.Task) response.Status {
+	return th.Repository.CreateTask(task)
 }
 
 func (th *TaskHandler) GetTask(taskId int) (interface{}, response.Status) {

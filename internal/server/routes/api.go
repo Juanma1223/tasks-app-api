@@ -18,7 +18,7 @@ func New() http.Handler {
 
 	tr := TaskRouter{
 		Handler: &taskHandler.TaskHandler{
-			Repository: taskRepository.TaskRepository{},
+			Repository: &taskRepository.TaskRepository{},
 		},
 	}
 
